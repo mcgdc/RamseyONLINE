@@ -13,7 +13,8 @@ namespace RamseyONLINE
     public partial class Form1 : Form
     {
         public GraphKind kindOfGraph { get; set; }
-        public int numberOfvertices;
+        public int numberOfIsolatedvertices { get; set; }
+        public int numberOfvertices_H { get; set; }
         public Form1()
         {
             InitializeComponent();

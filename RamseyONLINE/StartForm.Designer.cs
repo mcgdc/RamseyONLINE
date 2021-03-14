@@ -106,22 +106,14 @@ namespace RamseyONLINE
             // comboBox_N
             // 
             this.comboBox_N.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBox_N.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_N.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_N.FormattingEnabled = true;
-            this.comboBox_N.Items.AddRange(new object[] {
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12"});
-            this.comboBox_N.Location = new System.Drawing.Point(64, 116);
+            this.comboBox_N.Location = new System.Drawing.Point(64, 115);
             this.comboBox_N.Name = "comboBox_N";
             this.comboBox_N.Size = new System.Drawing.Size(121, 30);
             this.comboBox_N.TabIndex = 2;
+            this.comboBox_N.SelectedIndexChanged += new System.EventHandler(this.comboBox_N_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -163,6 +155,7 @@ namespace RamseyONLINE
             this.OKbutton.TabIndex = 8;
             this.OKbutton.Text = "OK";
             this.OKbutton.UseVisualStyleBackColor = true;
+            this.OKbutton.Click += new System.EventHandler(this.OKbutton_Click);
             // 
             // label2
             // 
@@ -178,10 +171,10 @@ namespace RamseyONLINE
             // 
             // label3
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(13, 214);
+            this.label3.Location = new System.Drawing.Point(13, 234);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(290, 44);
@@ -191,24 +184,22 @@ namespace RamseyONLINE
             // 
             // comboBox_h
             // 
-            this.comboBox_h.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBox_h.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.comboBox_h.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_h.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_h.FormattingEnabled = true;
-            this.comboBox_h.Items.AddRange(new object[] {
-            "3",
-            "4",
-            "5"});
-            this.comboBox_h.Location = new System.Drawing.Point(100, 313);
+            this.comboBox_h.Location = new System.Drawing.Point(100, 288);
+            this.comboBox_h.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.comboBox_h.Name = "comboBox_h";
             this.comboBox_h.Size = new System.Drawing.Size(116, 30);
             this.comboBox_h.TabIndex = 2;
+            this.comboBox_h.SelectedIndexChanged += new System.EventHandler(this.comboBox_h_SelectedIndexChanged);
             // 
             // pictureBox_clique
             // 
             this.pictureBox_clique.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pictureBox_clique.BackColor = System.Drawing.Color.White;
-            this.pictureBox_clique.Image = global::RamseyONLINE.Properties.Resources.clique;
-            this.pictureBox_clique.InitialImage = global::RamseyONLINE.Properties.Resources.clique;
+            this.pictureBox_clique.InitialImage = null;
             this.pictureBox_clique.Location = new System.Drawing.Point(131, 54);
             this.pictureBox_clique.Margin = new System.Windows.Forms.Padding(3, 3, 40, 3);
             this.pictureBox_clique.Name = "pictureBox_clique";
@@ -216,6 +207,7 @@ namespace RamseyONLINE
             this.pictureBox_clique.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox_clique.TabIndex = 3;
             this.pictureBox_clique.TabStop = false;
+            this.pictureBox_clique.Click += new System.EventHandler(this.pictureBox_clique_Click);
             // 
             // pictureBox1
             // 
@@ -227,6 +219,7 @@ namespace RamseyONLINE
             this.pictureBox1.Size = new System.Drawing.Size(145, 131);
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // pictureBox2
             // 
