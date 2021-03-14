@@ -16,6 +16,7 @@ namespace RamseyONLINE
             pictureBox_preview.Image = new Bitmap(pictureBox_preview.Width, pictureBox_preview.Height);
 
             GraphDrawing.DrawClique((Bitmap)pictureBox_clique.Image, 5);
+            GraphDrawing.DrawStar((Bitmap)pictureBox_star.Image, 8);
 
             comboBox_N.Items.AddRange(new object[] { "4","5","6","7","8"});
             comboBox_N.SelectedIndex = 0;
