@@ -40,16 +40,20 @@ namespace RamseyONLINE
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox_h = new System.Windows.Forms.ComboBox();
-            this.pictureBox_clique = new System.Windows.Forms.PictureBox();
-            this.pictureBox_star = new System.Windows.Forms.PictureBox();
             this.pictureBox_preview = new System.Windows.Forms.PictureBox();
+            this.panel_clique = new System.Windows.Forms.Panel();
+            this.pictureBox_clique = new System.Windows.Forms.PictureBox();
+            this.panel_star = new System.Windows.Forms.Panel();
+            this.pictureBox_star = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_N)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_clique)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_star)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_preview)).BeginInit();
+            this.panel_clique.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_clique)).BeginInit();
+            this.panel_star.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_star)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -75,12 +79,12 @@ namespace RamseyONLINE
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.99999F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel4.Controls.Add(this.pictureBox_star, 1, 1);
             this.tableLayoutPanel4.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.label3, 0, 2);
             this.tableLayoutPanel4.Controls.Add(this.comboBox_h, 0, 3);
-            this.tableLayoutPanel4.Controls.Add(this.pictureBox_clique, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.pictureBox_preview, 1, 2);
+            this.tableLayoutPanel4.Controls.Add(this.panel_clique, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.panel_star, 1, 1);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(273, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -195,42 +199,65 @@ namespace RamseyONLINE
             this.comboBox_h.TabIndex = 2;
             this.comboBox_h.SelectedIndexChanged += new System.EventHandler(this.comboBox_h_SelectedIndexChanged);
             // 
+            // pictureBox_preview
+            // 
+            this.pictureBox_preview.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox_preview.BackColor = System.Drawing.Color.White;
+            this.pictureBox_preview.Location = new System.Drawing.Point(422, 245);
+            this.pictureBox_preview.Name = "pictureBox_preview";
+            this.tableLayoutPanel4.SetRowSpan(this.pictureBox_preview, 2);
+            this.pictureBox_preview.Size = new System.Drawing.Size(166, 144);
+            this.pictureBox_preview.TabIndex = 5;
+            this.pictureBox_preview.TabStop = false;
+            // 
+            // panel_clique
+            // 
+            this.panel_clique.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.panel_clique.BackColor = System.Drawing.Color.White;
+            this.panel_clique.Controls.Add(this.pictureBox_clique);
+            this.panel_clique.Location = new System.Drawing.Point(126, 58);
+            this.panel_clique.Margin = new System.Windows.Forms.Padding(3, 3, 40, 3);
+            this.panel_clique.Name = "panel_clique";
+            this.panel_clique.Size = new System.Drawing.Size(170, 148);
+            this.panel_clique.TabIndex = 6;
+            // 
             // pictureBox_clique
             // 
-            this.pictureBox_clique.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pictureBox_clique.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox_clique.BackColor = System.Drawing.Color.White;
             this.pictureBox_clique.InitialImage = null;
-            this.pictureBox_clique.Location = new System.Drawing.Point(130, 60);
+            this.pictureBox_clique.Location = new System.Drawing.Point(2, 2);
             this.pictureBox_clique.Margin = new System.Windows.Forms.Padding(3, 3, 40, 3);
             this.pictureBox_clique.Name = "pictureBox_clique";
+            this.pictureBox_clique.Padding = new System.Windows.Forms.Padding(2);
             this.pictureBox_clique.Size = new System.Drawing.Size(166, 144);
             this.pictureBox_clique.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox_clique.TabIndex = 3;
+            this.pictureBox_clique.TabIndex = 4;
             this.pictureBox_clique.TabStop = false;
             this.pictureBox_clique.Click += new System.EventHandler(this.pictureBox_clique_Click);
+            // 
+            // panel_star
+            // 
+            this.panel_star.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.panel_star.BackColor = System.Drawing.Color.White;
+            this.panel_star.Controls.Add(this.pictureBox_star);
+            this.panel_star.Location = new System.Drawing.Point(376, 58);
+            this.panel_star.Margin = new System.Windows.Forms.Padding(40, 3, 3, 3);
+            this.panel_star.Name = "panel_star";
+            this.panel_star.Size = new System.Drawing.Size(170, 148);
+            this.panel_star.TabIndex = 7;
             // 
             // pictureBox_star
             // 
             this.pictureBox_star.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pictureBox_star.BackColor = System.Drawing.Color.White;
-            this.pictureBox_star.Location = new System.Drawing.Point(376, 60);
+            this.pictureBox_star.Location = new System.Drawing.Point(2, 2);
             this.pictureBox_star.Margin = new System.Windows.Forms.Padding(40, 3, 3, 3);
             this.pictureBox_star.Name = "pictureBox_star";
             this.pictureBox_star.Size = new System.Drawing.Size(166, 144);
-            this.pictureBox_star.TabIndex = 4;
+            this.pictureBox_star.TabIndex = 5;
             this.pictureBox_star.TabStop = false;
-            this.pictureBox_star.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // pictureBox_preview
-            // 
-            this.pictureBox_preview.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox_preview.BackColor = System.Drawing.Color.White;
-            this.pictureBox_preview.Location = new System.Drawing.Point(417, 243);
-            this.pictureBox_preview.Name = "pictureBox_preview";
-            this.tableLayoutPanel4.SetRowSpan(this.pictureBox_preview, 2);
-            this.pictureBox_preview.Size = new System.Drawing.Size(175, 147);
-            this.pictureBox_preview.TabIndex = 5;
-            this.pictureBox_preview.TabStop = false;
+            this.pictureBox_star.Click += new System.EventHandler(this.pictureBox_star_Click);
             // 
             // StartForm
             // 
@@ -240,17 +267,22 @@ namespace RamseyONLINE
             this.ClientSize = new System.Drawing.Size(950, 492);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "StartForm";
             this.Text = "Game options";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.StartForm_FormClosing);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_N)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_clique)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_star)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_preview)).EndInit();
+            this.panel_clique.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_clique)).EndInit();
+            this.panel_star.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_star)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -267,8 +299,10 @@ namespace RamseyONLINE
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBox_h;
-        private System.Windows.Forms.PictureBox pictureBox_star;
-        private System.Windows.Forms.PictureBox pictureBox_clique;
         private System.Windows.Forms.PictureBox pictureBox_preview;
+        private System.Windows.Forms.Panel panel_clique;
+        private System.Windows.Forms.PictureBox pictureBox_clique;
+        private System.Windows.Forms.Panel panel_star;
+        private System.Windows.Forms.PictureBox pictureBox_star;
     }
 }
