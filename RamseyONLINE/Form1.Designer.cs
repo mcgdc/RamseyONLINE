@@ -32,13 +32,13 @@ namespace RamseyONLINE
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox_game = new System.Windows.Forms.PictureBox();
             this.pictureBox_H = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox_game = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_game)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_H)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_game)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -74,16 +74,6 @@ namespace RamseyONLINE
             this.tableLayoutPanel2.Size = new System.Drawing.Size(243, 781);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
-            // pictureBox_game
-            // 
-            this.pictureBox_game.BackColor = System.Drawing.Color.White;
-            this.pictureBox_game.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox_game.Location = new System.Drawing.Point(252, 3);
-            this.pictureBox_game.Name = "pictureBox_game";
-            this.pictureBox_game.Size = new System.Drawing.Size(1153, 781);
-            this.pictureBox_game.TabIndex = 1;
-            this.pictureBox_game.TabStop = false;
-            // 
             // pictureBox_H
             // 
             this.pictureBox_H.BackColor = System.Drawing.Color.White;
@@ -98,13 +88,23 @@ namespace RamseyONLINE
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 45);
+            this.label1.Location = new System.Drawing.Point(12, 35);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(199, 40);
+            this.label1.Size = new System.Drawing.Size(218, 60);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Don\'t allow monochromatic copy of graph H:";
+            this.label1.Text = "Prevent construction of monochromatic copy of graph H:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox_game
+            // 
+            this.pictureBox_game.BackColor = System.Drawing.Color.White;
+            this.pictureBox_game.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox_game.Location = new System.Drawing.Point(252, 3);
+            this.pictureBox_game.Name = "pictureBox_game";
+            this.pictureBox_game.Size = new System.Drawing.Size(1153, 781);
+            this.pictureBox_game.TabIndex = 1;
+            this.pictureBox_game.TabStop = false;
             // 
             // Form1
             // 
@@ -122,8 +122,8 @@ namespace RamseyONLINE
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_game)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_H)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_game)).EndInit();
             this.ResumeLayout(false);
 
         }
