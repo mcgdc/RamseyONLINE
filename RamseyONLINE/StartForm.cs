@@ -29,10 +29,7 @@ namespace RamseyONLINE
 
         private void OKbutton_Click(object sender, EventArgs e)
         {
-            var owner = (Form1)this.Owner;
-            owner.kindOfGraph = clique ? GraphKind.clique : GraphKind.star;
-            owner.numberOfvertices_H = int.Parse((string)comboBox_h.SelectedItem);
-            owner.numberOfIsolatedvertices = int.Parse((string)comboBox_N.SelectedItem);
+            this.Close();
         }
 
         private void comboBox_N_SelectedIndexChanged(object sender, EventArgs e)

@@ -22,6 +22,16 @@ namespace RamseyONLINE
             startForm.FormBorderStyle = FormBorderStyle.FixedSingle;
             startForm.StartPosition = FormStartPosition.CenterParent;
             startForm.ShowDialog(this);
+            pictureBox_H.Image = new Bitmap(pictureBox_H.Width, pictureBox_H.Height);
+            pictureBox_game.Image = new Bitmap(pictureBox_game.Width, pictureBox_game.Height);
+
+            if (kindOfGraph == GraphKind.clique)
+                GraphDrawing.DrawClique((Bitmap)pictureBox_H.Image, numberOfvertices_H);
+            else GraphDrawing.DrawStar((Bitmap)pictureBox_H.Image, numberOfvertices_H);
+
+            GraphDrawing.DrawIsolatedVerices((Bitmap)pictureBox_game.Image, numberOfIsolatedvertices,10);
+            pictureBox_game.Refresh();
+            pictureBox_H.Refresh();
         }
     }
 }

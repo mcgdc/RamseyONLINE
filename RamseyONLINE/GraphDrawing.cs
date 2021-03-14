@@ -44,6 +44,24 @@ namespace RamseyONLINE
 
             graphics.Dispose();
         }
+        public static void DrawIsolatedVerices(Bitmap bitmap, int N, int vertixSize)
+        {
+            double x_middle = bitmap.Width / 2;
+            double y_middle = bitmap.Height / 2;
+            double angle = 2 * Math.PI / (double)N;
+            double radius = 3.0 / 4.0 * 0.5 * Math.Min(bitmap.Width, bitmap.Height);
+            Graphics graphics = Graphics.FromImage(bitmap);
+            (float x, float y)[] vertices = new (float, float)[N];
+            for (int i = 0; i < N; i++)
+            {
+                vertices[i].x = (float)(x_middle + radius * Math.Cos(angle * i));
+                vertices[i].y = (float)(y_middle + radius * Math.Sin(angle * i));
+            }
+            foreach (var vertice in vertices)
+                graphics.FillEllipse(new SolidBrush(Color.Maroon), vertice.x - vertixSize/2, vertice.y - vertixSize/2, vertixSize, vertixSize);
+
+            graphics.Dispose();
+        }
         public static void DrawStar(Bitmap bitmap, int N)
         {
             float x_middle = bitmap.Width / 2;
