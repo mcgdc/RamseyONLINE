@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RamseyONLINE
@@ -16,7 +10,14 @@ namespace RamseyONLINE
         public StartForm()
         {
             InitializeComponent();
-            comboBox_N.Items.AddRange(new object[] { "4","5","6","7","8","9","10","11","12"});
+            pictureBox_N.Image = new Bitmap(pictureBox_N.Width, pictureBox_N.Height);
+            pictureBox_clique.Image = new Bitmap(pictureBox_clique.Width, pictureBox_clique.Height);
+            pictureBox_star.Image = new Bitmap(pictureBox_star.Width, pictureBox_star.Height);
+            pictureBox_preview.Image = new Bitmap(pictureBox_preview.Width, pictureBox_preview.Height);
+
+            GraphDrawing.DrawClique((Bitmap)pictureBox_clique.Image, 5);
+
+            comboBox_N.Items.AddRange(new object[] { "4","5","6","7","8"});
             comboBox_N.SelectedIndex = 0;
             comboBox_h.Items.AddRange(new object[] { "3"});
             comboBox_h.SelectedIndex = 0;
@@ -39,6 +40,9 @@ namespace RamseyONLINE
                 comboBox_h.Items.Add(i.ToString());
             }
             comboBox_h.SelectedIndex = 0;
+            pictureBox_N.Image = new Bitmap(pictureBox_N.Width, pictureBox_N.Height);
+            GraphDrawing.DrawIsolatedVerices((Bitmap)pictureBox_N.Image, N);
+            pictureBox_N.Refresh();
         }
 
         private void comboBox_h_SelectedIndexChanged(object sender, EventArgs e)
