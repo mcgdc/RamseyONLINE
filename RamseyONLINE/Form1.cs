@@ -17,7 +17,7 @@ namespace RamseyONLINE
         public int numberOfvertices_H { get; set; }
         public Graph graph { get; set; }
         public bool drawingEdge { get; set; }
-        public (int,int) startPointPosition { get; set; }
+        public (int, int) startPointPosition { get; set; }
         public int startPoint { get; set; }
         public Form1()
         {
@@ -35,7 +35,7 @@ namespace RamseyONLINE
 
             //GraphDrawing.DrawIsolatedVerices((Bitmap)pictureBox_game.Image, numberOfIsolatedvertices,10);
             graph = new Graph(numberOfIsolatedvertices, pictureBox_game.Width, pictureBox_game.Height);
-            //graph.AddEdge(0, 1, Color.Red);
+            graph.AddEdge(0, 1, Color.Blue);
             graph.DrawGraph(Graphics.FromImage(pictureBox_game.Image));
             pictureBox_H.Refresh();
             pictureBox_game.Refresh();
@@ -48,7 +48,7 @@ namespace RamseyONLINE
         private void pictureBox_game_MouseDown(object sender, MouseEventArgs e)
         {
             int n = graph.IsOverVertex(e.X, e.Y);
-            if(n>-1)
+            if (n > -1)
             {
                 drawingEdge = true;
                 startPoint = n;
@@ -58,12 +58,12 @@ namespace RamseyONLINE
 
         private void pictureBox_game_MouseMove(object sender, MouseEventArgs e)
         {
-            if(drawingEdge)
+            if (drawingEdge)
             {
                 Graphics graphics = Graphics.FromImage(pictureBox_game.Image);
                 graphics.Clear(Color.White);
                 graph.DrawGraph(graphics);
-                graphics.DrawLine(new Pen(new SolidBrush(Color.DarkGray), 1.5f),startPointPosition.Item1,startPointPosition.Item2, e.X, e.Y);
+                graphics.DrawLine(new Pen(new SolidBrush(Color.DarkGray), 1.5f), startPointPosition.Item1, startPointPosition.Item2, e.X, e.Y);
             }
             pictureBox_game.Refresh();
         }
@@ -74,14 +74,14 @@ namespace RamseyONLINE
             {
                 drawingEdge = false;
                 int n = graph.IsOverVertex(e.X, e.Y);
-                if(n>-1)
+                if (n > -1)
                 {
-                    //DODAC SPRAWDZANIE CZY JUZ NIE ISTNIEJE
-                    graph.AddEdge(startPoint, n, Color.Red);
+                    if (!graph.ContainsEdge(startPoint, n))
+                        graph.AddEdge(startPoint, n, Color.Red);
                 }
-                    Graphics graphics = Graphics.FromImage(pictureBox_game.Image);
-                    graphics.Clear(Color.White);
-                    graph.DrawGraph(graphics);
+                Graphics graphics = Graphics.FromImage(pictureBox_game.Image);
+                graphics.Clear(Color.White);
+                graph.DrawGraph(graphics);
             }
         }
     }

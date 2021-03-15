@@ -60,6 +60,11 @@ namespace RamseyONLINE
         {
             return (vertices[n].x, vertices[n].y);
         }
+        public bool ContainsEdge(int vertex1,int vertex2)
+        {
+            if (adjacencyList[vertex1].Contains((vertex2, Color.Red)) || adjacencyList[vertex1].Contains((vertex2, Color.Blue)))return true;
+            return false;
+        }
 
         //Do algorytmu przyda się jakaś metoda udostepniająca krawędzie dla danego wierzchołka
 
