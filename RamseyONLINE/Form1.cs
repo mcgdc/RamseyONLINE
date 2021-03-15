@@ -75,7 +75,7 @@ namespace RamseyONLINE
                 {
                     if (!graph.ContainsEdge(startVertex, n))
                     {
-                        graph.AddEdge(startVertex, n, Painter.PickColor(graph));
+                        graph.AddEdge(startVertex, n, Painter.PickColor(graph, kindOfGraph, numberOfvertices_H));
                         numberOfEdges++;
                     }
                     var result = GameMaster.CheckIfEnd(graph, kindOfGraph, numberOfvertices_H, numberOfIsolatedvertices, numberOfEdges);
