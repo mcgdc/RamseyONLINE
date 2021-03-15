@@ -19,13 +19,18 @@ namespace RamseyONLINE
         public Form1()
         {
             InitializeComponent();
+           
+            pictureBox_H.Image = new Bitmap(pictureBox_H.Width, pictureBox_H.Height);
+            pictureBox_game.Image = new Bitmap(pictureBox_game.Width, pictureBox_game.Height);
+            SetUpGame();
+        }
+
+        private void SetUpGame()
+        {
             StartForm startForm = new StartForm() { Owner = this };
             startForm.FormBorderStyle = FormBorderStyle.FixedSingle;
             startForm.StartPosition = FormStartPosition.CenterParent;
             startForm.ShowDialog(this);
-            pictureBox_H.Image = new Bitmap(pictureBox_H.Width, pictureBox_H.Height);
-            pictureBox_game.Image = new Bitmap(pictureBox_game.Width, pictureBox_game.Height);
-
             if (kindOfGraph == GraphKind.clique)
                 GraphDrawing.DrawClique((Bitmap)pictureBox_H.Image, numberOfvertices_H);
             else GraphDrawing.DrawStar((Bitmap)pictureBox_H.Image, numberOfvertices_H);
@@ -34,6 +39,7 @@ namespace RamseyONLINE
             graph.DrawGraph(Graphics.FromImage(pictureBox_game.Image));
             pictureBox_H.Refresh();
             pictureBox_game.Refresh();
+            numberOfEdges = 0;
         }
 
         private void pictureBox_game_MouseDown(object sender, MouseEventArgs e)
@@ -100,7 +106,11 @@ namespace RamseyONLINE
         }
         private void SetUpNewGame()
         {
-
+            pictureBox_game.Image = new Bitmap(pictureBox_game.Width, pictureBox_game.Height);
+            pictureBox_H.Image = new Bitmap(pictureBox_H.Width, pictureBox_H.Height);
+            pictureBox_H.Refresh();
+            pictureBox_game.Refresh();
+            SetUpGame();
         }
     }
 }

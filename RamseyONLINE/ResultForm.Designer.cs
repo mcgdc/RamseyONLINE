@@ -34,9 +34,7 @@ namespace RamseyONLINE
             this.button_close = new System.Windows.Forms.Button();
             this.button_again = new System.Windows.Forms.Button();
             this.label_result = new System.Windows.Forms.Label();
-            this.pictureBox_result = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_result)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -49,13 +47,12 @@ namespace RamseyONLINE
             this.tableLayoutPanel1.Controls.Add(this.button_close, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.button_again, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.label_result, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBox_result, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.39413F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40.39168F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 29.81651F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44.72477F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.2142F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(366, 436);
@@ -90,22 +87,11 @@ namespace RamseyONLINE
             this.label_result.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label_result.AutoSize = true;
             this.tableLayoutPanel1.SetColumnSpan(this.label_result, 4);
-            this.label_result.Location = new System.Drawing.Point(157, 227);
+            this.label_result.Location = new System.Drawing.Point(157, 217);
             this.label_result.Name = "label_result";
             this.label_result.Size = new System.Drawing.Size(51, 20);
             this.label_result.TabIndex = 2;
             this.label_result.Text = "label1";
-            // 
-            // pictureBox_result
-            // 
-            this.pictureBox_result.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox_result.BackColor = System.Drawing.Color.White;
-            this.tableLayoutPanel1.SetColumnSpan(this.pictureBox_result, 2);
-            this.pictureBox_result.Location = new System.Drawing.Point(109, 14);
-            this.pictureBox_result.Name = "pictureBox_result";
-            this.pictureBox_result.Size = new System.Drawing.Size(144, 121);
-            this.pictureBox_result.TabIndex = 3;
-            this.pictureBox_result.TabStop = false;
             // 
             // ResultForm
             // 
@@ -121,7 +107,6 @@ namespace RamseyONLINE
             this.Text = "ResultForm";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_result)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -132,6 +117,5 @@ namespace RamseyONLINE
         private System.Windows.Forms.Button button_close;
         private System.Windows.Forms.Button button_again;
         private System.Windows.Forms.Label label_result;
-        private System.Windows.Forms.PictureBox pictureBox_result;
     }
 }
