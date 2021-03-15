@@ -8,10 +8,14 @@ namespace RamseyONLINE
         public GraphKind kindOfGraph { get; set; }
         public int numberOfIsolatedvertices { get; set; }
         public int numberOfvertices_H { get; set; }
-        public Graph graph { get; set; }
-        public bool drawingEdge { get; set; }
-        public (int, int) startPointPosition { get; set; }
-        public int startVertex { get; set; }
+
+        private Graph graph;
+        private bool drawingEdge;
+        private (int, int) startPointPosition;
+        private int startVertex;
+        private int numberOfEdges = 0;
+
+        public bool PlayAgain { get; set; }
         public Form1()
         {
             InitializeComponent();
@@ -64,13 +68,39 @@ namespace RamseyONLINE
                 if (n > -1)
                 {
                     if (!graph.ContainsEdge(startVertex, n))
+                    {
                         graph.AddEdge(startVertex, n, Painter.PickColor(graph));
+                        numberOfEdges++;
+                    }
+                    var result = GameMaster.CheckIfEnd(graph, kindOfGraph, numberOfvertices_H, numberOfIsolatedvertices, numberOfEdges);
+                    if (result.Item1)
+                    {
+                        EndGame(result.Item2);
+                    }
                 }
                 Graphics graphics = Graphics.FromImage(pictureBox_game.Image);
                 graphics.Clear(Color.White);
                 graph.DrawGraph(graphics);
                 pictureBox_game.Refresh();
             }
+        }
+
+        private void EndGame(Player winner)
+        {
+            ShowResults(winner);
+
+            if (PlayAgain)
+                SetUpNewGame();
+            else this.Close();
+        }
+        private void ShowResults(Player winner)
+        {
+            ResultForm resultForm = new ResultForm(winner==Player.Builder) { Owner = this };
+            resultForm.ShowDialog(this);
+        }
+        private void SetUpNewGame()
+        {
+
         }
     }
 }
