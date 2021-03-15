@@ -111,6 +111,8 @@ namespace RamseyONLINE
             this.pictureBox_game.TabStop = false;
             this.pictureBox_game.Click += new System.EventHandler(this.pictureBox_game_Click);
             this.pictureBox_game.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox_game_MouseDown);
+            this.pictureBox_game.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox_game_MouseMove);
+            this.pictureBox_game.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox_game_MouseUp);
             // 
             // Form1
             // 

@@ -40,7 +40,7 @@ namespace RamseyONLINE
             {
                 for (int j = 0; j < adjacencyList[i].Count; j++)
                 {
-                        graphics.DrawLine(new Pen(new SolidBrush(adjacencyList[i][j].Item2)), vertices[j].x, vertices[j].y, vertices[i].x, vertices[i].y);
+                        graphics.DrawLine(new Pen(new SolidBrush(adjacencyList[i][j].Item2)), vertices[i].x, vertices[i].y, vertices[adjacencyList[i][j].Item1].x, vertices[adjacencyList[i][j].Item1].y);
                 }
             }
             for (int i = 0; i < vertices.Length; i++)
@@ -55,6 +55,10 @@ namespace RamseyONLINE
                 if (Math.Abs(vertices[i].x - x) < precision && Math.Abs(vertices[i].y - y) < precision) return i;
             }
             return -1;
+        }
+        public (int,int) GetVertexPosition(int n)
+        {
+            return (vertices[n].x, vertices[n].y);
         }
 
         //Do algorytmu przyda się jakaś metoda udostepniająca krawędzie dla danego wierzchołka
