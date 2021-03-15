@@ -69,6 +69,7 @@ namespace RamseyONLINE
         {
             if (drawingEdge)
             {
+                Graphics graphics = Graphics.FromImage(pictureBox_game.Image);
                 drawingEdge = false;
                 int n = graph.IsOverVertex(e.X, e.Y);
                 if (n > -1)
@@ -77,6 +78,9 @@ namespace RamseyONLINE
                     {
                         graph.AddEdge(startVertex, n, Painter.PickColor(graph, kindOfGraph, numberOfvertices_H));
                         numberOfEdges++;
+                        graphics.Clear(Color.White);
+                        graph.DrawGraph(graphics);
+                        pictureBox_game.Refresh();
                     }
                     var result = GameMaster.CheckIfEnd(graph, kindOfGraph, numberOfvertices_H, numberOfIsolatedvertices, numberOfEdges);
                     if (result.Item1)
@@ -84,7 +88,6 @@ namespace RamseyONLINE
                         EndGame(result.Item2);
                     }
                 }
-                Graphics graphics = Graphics.FromImage(pictureBox_game.Image);
                 graphics.Clear(Color.White);
                 graph.DrawGraph(graphics);
                 pictureBox_game.Refresh();

@@ -8,8 +8,10 @@ namespace RamseyONLINE
     {
         List<List<(int, Color)>> adjacencyList;
         (int x,int y)[] vertices;
+        public readonly int verticesCount;
         public Graph(int n,int bitmapWidth,int bitmapHeight)
         {
+            verticesCount = n;
             vertices = new (int x, int y)[n];
             adjacencyList = new List<List<(int, Color)>>();
             for (int i = 0; i < n; i++)
@@ -61,8 +63,9 @@ namespace RamseyONLINE
             if (adjacencyList[vertex1].Exists(ad => ad.Item1 == vertex2)) return true;
             return false;
         }
-
-        //Do algorytmu przyda się jakaś metoda udostepniająca krawędzie dla danego wierzchołka
-
+        public List<(int,Color)>  GetEdges(int n)
+        {
+            return adjacencyList[n];
+        }
     }
 }
