@@ -49,22 +49,24 @@ namespace RamseyONLINE
             this.tableLayoutPanel1.Controls.Add(this.label_result, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 29.81651F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44.72477F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.2142F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(366, 436);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(325, 349);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // button_close
             // 
             this.button_close.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tableLayoutPanel1.SetColumnSpan(this.button_close, 2);
-            this.button_close.Location = new System.Drawing.Point(39, 355);
+            this.button_close.Location = new System.Drawing.Point(34, 284);
+            this.button_close.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_close.Name = "button_close";
-            this.button_close.Size = new System.Drawing.Size(101, 51);
+            this.button_close.Size = new System.Drawing.Size(90, 41);
             this.button_close.TabIndex = 0;
             this.button_close.Text = "Close";
             this.button_close.UseVisualStyleBackColor = true;
@@ -74,9 +76,10 @@ namespace RamseyONLINE
             // 
             this.button_again.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tableLayoutPanel1.SetColumnSpan(this.button_again, 2);
-            this.button_again.Location = new System.Drawing.Point(222, 355);
+            this.button_again.Location = new System.Drawing.Point(197, 284);
+            this.button_again.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_again.Name = "button_again";
-            this.button_again.Size = new System.Drawing.Size(101, 51);
+            this.button_again.Size = new System.Drawing.Size(90, 41);
             this.button_again.TabIndex = 1;
             this.button_again.Text = "Play again";
             this.button_again.UseVisualStyleBackColor = true;
@@ -87,19 +90,21 @@ namespace RamseyONLINE
             this.label_result.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label_result.AutoSize = true;
             this.tableLayoutPanel1.SetColumnSpan(this.label_result, 4);
-            this.label_result.Location = new System.Drawing.Point(157, 217);
+            this.label_result.Location = new System.Drawing.Point(139, 173);
             this.label_result.Name = "label_result";
-            this.label_result.Size = new System.Drawing.Size(51, 20);
+            this.label_result.Size = new System.Drawing.Size(46, 17);
             this.label_result.TabIndex = 2;
             this.label_result.Text = "label1";
             // 
             // ResultForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(366, 436);
+            this.ClientSize = new System.Drawing.Size(325, 349);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ResultForm";
