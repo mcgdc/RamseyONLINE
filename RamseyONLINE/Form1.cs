@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
 namespace RamseyONLINE
@@ -18,7 +11,7 @@ namespace RamseyONLINE
         public Graph graph { get; set; }
         public bool drawingEdge { get; set; }
         public (int, int) startPointPosition { get; set; }
-        public int startPoint { get; set; }
+        public int startVertex { get; set; }
         public Form1()
         {
             InitializeComponent();
@@ -33,16 +26,10 @@ namespace RamseyONLINE
                 GraphDrawing.DrawClique((Bitmap)pictureBox_H.Image, numberOfvertices_H);
             else GraphDrawing.DrawStar((Bitmap)pictureBox_H.Image, numberOfvertices_H);
 
-            //GraphDrawing.DrawIsolatedVerices((Bitmap)pictureBox_game.Image, numberOfIsolatedvertices,10);
             graph = new Graph(numberOfIsolatedvertices, pictureBox_game.Width, pictureBox_game.Height);
-            graph.AddEdge(0, 1, Color.Blue);
             graph.DrawGraph(Graphics.FromImage(pictureBox_game.Image));
             pictureBox_H.Refresh();
             pictureBox_game.Refresh();
-        }
-
-        private void pictureBox_game_Click(object sender, EventArgs e)
-        {
         }
 
         private void pictureBox_game_MouseDown(object sender, MouseEventArgs e)
@@ -51,7 +38,7 @@ namespace RamseyONLINE
             if (n > -1)
             {
                 drawingEdge = true;
-                startPoint = n;
+                startVertex = n;
                 startPointPosition = graph.GetVertexPosition(n);
             }
         }
@@ -63,9 +50,9 @@ namespace RamseyONLINE
                 Graphics graphics = Graphics.FromImage(pictureBox_game.Image);
                 graphics.Clear(Color.White);
                 graph.DrawGraph(graphics);
-                graphics.DrawLine(new Pen(new SolidBrush(Color.DarkGray), 1.5f), startPointPosition.Item1, startPointPosition.Item2, e.X, e.Y);
+                graphics.DrawLine(new Pen(new SolidBrush(Color.DarkGray), 2f), startPointPosition.Item1, startPointPosition.Item2, e.X, e.Y);
+                pictureBox_game.Refresh();
             }
-            pictureBox_game.Refresh();
         }
 
         private void pictureBox_game_MouseUp(object sender, MouseEventArgs e)
@@ -76,12 +63,13 @@ namespace RamseyONLINE
                 int n = graph.IsOverVertex(e.X, e.Y);
                 if (n > -1)
                 {
-                    if (!graph.ContainsEdge(startPoint, n))
-                        graph.AddEdge(startPoint, n, Color.Red);
+                    if (!graph.ContainsEdge(startVertex, n))
+                        graph.AddEdge(startVertex, n, Painter.PickColor(graph));
                 }
                 Graphics graphics = Graphics.FromImage(pictureBox_game.Image);
                 graphics.Clear(Color.White);
                 graph.DrawGraph(graphics);
+                pictureBox_game.Refresh();
             }
         }
     }

@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RamseyONLINE
 {
@@ -35,12 +32,13 @@ namespace RamseyONLINE
         }
         public void DrawGraph(Graphics graphics)
         {
-            int vertexSize = 6;
+            int vertexSize = 10;
+            int penSize = 2;
             for (int i = 0; i < adjacencyList.Count; i++)
             {
                 for (int j = 0; j < adjacencyList[i].Count; j++)
                 {
-                        graphics.DrawLine(new Pen(new SolidBrush(adjacencyList[i][j].Item2)), vertices[i].x, vertices[i].y, vertices[adjacencyList[i][j].Item1].x, vertices[adjacencyList[i][j].Item1].y);
+                        graphics.DrawLine(new Pen(new SolidBrush(adjacencyList[i][j].Item2),penSize), vertices[i].x, vertices[i].y, vertices[adjacencyList[i][j].Item1].x, vertices[adjacencyList[i][j].Item1].y);
                 }
             }
             for (int i = 0; i < vertices.Length; i++)
@@ -51,9 +49,7 @@ namespace RamseyONLINE
         {
             int precision = 10;
             for (int i = 0; i < vertices.Length; i++)
-            {
                 if (Math.Abs(vertices[i].x - x) < precision && Math.Abs(vertices[i].y - y) < precision) return i;
-            }
             return -1;
         }
         public (int,int) GetVertexPosition(int n)
@@ -62,7 +58,7 @@ namespace RamseyONLINE
         }
         public bool ContainsEdge(int vertex1,int vertex2)
         {
-            if (adjacencyList[vertex1].Contains((vertex2, Color.Red)) || adjacencyList[vertex1].Contains((vertex2, Color.Blue)))return true;
+            if (adjacencyList[vertex1].Exists(ad => ad.Item1 == vertex2)) return true;
             return false;
         }
 
