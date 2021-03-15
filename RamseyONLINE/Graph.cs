@@ -15,6 +15,7 @@ namespace RamseyONLINE
         public Graph(int n)
         {
             Bitmap bitmap = new Bitmap(1028,633); //POPRAWIC!!!
+
             graphics = Graphics.FromImage(bitmap); // plus zablokowanie zmiany rozmiaru?
             double x_middle = bitmap.Width / 2;
             double y_middle = bitmap.Height / 2;
@@ -29,15 +30,20 @@ namespace RamseyONLINE
         }
         public void AddEdge(int u, int v,Color color)
         {
+            //Dodać sprawdzanie czy taka już nie istnieje?
+            //-przy rysowaniu
+            //-nie dodaje sie krawedz
             adjacencyList[u].Add((v, color));
             adjacencyList[v].Add((u, color));
         }
         public void DrawGraph()
         {
+
             for (int i = 0; i < adjacencyList.Count; i++)
             {
                 for (int j = 0; j < adjacencyList[i].Count; j++)
                 {
+                    //można dodać ifa żeby rysować tylko raz
                         graphics.DrawLine(new Pen(new SolidBrush(adjacencyList[i][j].Item2)), vertices[j].x, vertices[j].y, vertices[i].x, vertices[i].y);
                 }
             }
@@ -54,6 +60,8 @@ namespace RamseyONLINE
             }
             return -1;
         }
+
+        //Do algorytmu przyda się jakaś metoda udostepniająca krawędzie dla danego wierzchołka
 
     }
 }
