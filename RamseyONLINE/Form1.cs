@@ -15,6 +15,7 @@ namespace RamseyONLINE
         public GraphKind kindOfGraph { get; set; }
         public int numberOfIsolatedvertices { get; set; }
         public int numberOfvertices_H { get; set; }
+        public Graph graph;
         public Form1()
         {
             InitializeComponent();
@@ -29,9 +30,24 @@ namespace RamseyONLINE
                 GraphDrawing.DrawClique((Bitmap)pictureBox_H.Image, numberOfvertices_H);
             else GraphDrawing.DrawStar((Bitmap)pictureBox_H.Image, numberOfvertices_H);
 
-            GraphDrawing.DrawIsolatedVerices((Bitmap)pictureBox_game.Image, numberOfIsolatedvertices,10);
-            pictureBox_game.Refresh();
+            //GraphDrawing.DrawIsolatedVerices((Bitmap)pictureBox_game.Image, numberOfIsolatedvertices,10);
+            graph = new Graph(numberOfIsolatedvertices, pictureBox_game.Width, pictureBox_game.Height);
+            //graph.AddEdge(0, 1, Color.Red);
+            graph.DrawGraph(Graphics.FromImage(pictureBox_game.Image));
             pictureBox_H.Refresh();
+            pictureBox_game.Refresh();
+        }
+
+        private void pictureBox_game_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void pictureBox_game_MouseDown(object sender, MouseEventArgs e)
+        {
+            if(graph.IsOverVertex(e.X,e.Y)>-1)
+            {
+
+            }
         }
     }
 }
