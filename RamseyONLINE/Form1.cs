@@ -76,7 +76,7 @@ namespace RamseyONLINE
                 {
                     if (!graph.ContainsEdge(startVertex, n))
                     {
-                        graph.AddEdge(startVertex, n, Painter.PickColor(graph, kindOfGraph, numberOfvertices_H));
+                        graph.AddEdge(startVertex, n, Painter.PickColor(graph, kindOfGraph, numberOfvertices_H,startVertex,n));
                         numberOfEdges++;
                         graphics.Clear(Color.White);
                         graph.DrawGraph(graphics);

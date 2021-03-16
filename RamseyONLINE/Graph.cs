@@ -29,6 +29,7 @@ namespace RamseyONLINE
         }
         public void AddEdge(int u, int v,Color color)
         {
+            if (u == v) return;
             adjacencyList[u].Add((v, color));
             adjacencyList[v].Add((u, color));
         }
