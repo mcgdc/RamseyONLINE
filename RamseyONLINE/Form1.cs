@@ -74,7 +74,7 @@ namespace RamseyONLINE
                 int n = graph.IsOverVertex(e.X, e.Y);
                 if (n > -1)
                 {
-                    if (!graph.ContainsEdge(startVertex, n))
+                    if (!graph.ContainsEdge(startVertex, n) && startVertex!=n)
                     {
                         graph.AddEdge(startVertex, n, Painter.PickColor(graph, kindOfGraph, numberOfvertices_H,startVertex,n));
                         numberOfEdges++;
