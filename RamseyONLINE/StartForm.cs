@@ -35,17 +35,28 @@ namespace RamseyONLINE
         private void comboBox_N_SelectedIndexChanged(object sender, EventArgs e)
         {
             int N = int.Parse((string)comboBox_N.SelectedItem);
-            comboBox_h.Items.Clear();
-            for (int i = 3; i < N; i++)
-            {
-                comboBox_h.Items.Add(i.ToString());
-            }
-            comboBox_h.SelectedIndex = 0;
+            UpdateSelectedH();           
             pictureBox_N.Image = new Bitmap(pictureBox_N.Width, pictureBox_N.Height);
             GraphDrawing.DrawIsolatedVerices((Bitmap)pictureBox_N.Image, N);
             pictureBox_N.Refresh();
         }
 
+        private void UpdateSelectedH()
+        {
+            int N = int.Parse((string)comboBox_N.SelectedItem);
+            comboBox_h.Items.Clear();
+            if (clique)
+            {
+                for (int i = 3; i < 6 && i < N; i++)
+                    comboBox_h.Items.Add(i.ToString());
+            }
+            else
+            {
+                for (int i = 3; i < N; i++)
+                    comboBox_h.Items.Add(i.ToString());
+            }
+            comboBox_h.SelectedIndex = 0;
+        }
         private void comboBox_h_SelectedIndexChanged(object sender, EventArgs e)
         {
             DrawPreview();
@@ -67,6 +78,7 @@ namespace RamseyONLINE
                 panel_clique.BackColor = Color.Maroon;
                 panel_star.BackColor = Color.White;
             }
+            UpdateSelectedH();
             DrawPreview();
         }
         private void pictureBox_star_Click(object sender, EventArgs e)
@@ -77,6 +89,7 @@ namespace RamseyONLINE
                 panel_clique.BackColor = Color.White;
                 panel_star.BackColor = Color.Maroon;
             }
+            UpdateSelectedH();
             DrawPreview();
         }
         private void DrawPreview()
