@@ -9,6 +9,7 @@ namespace RamseyONLINE
         List<List<(int, Color)>> adjacencyList;
         (int x,int y)[] vertices;
         public readonly int verticesCount;
+        public int drawnVerticesCount = 0;
         public Graph(int n,int bitmapWidth,int bitmapHeight)
         {
             verticesCount = n;
@@ -32,6 +33,13 @@ namespace RamseyONLINE
             if (u == v) return;
             adjacencyList[u].Add((v, color));
             adjacencyList[v].Add((u, color));
+            drawnVerticesCount++;
+        }
+        public void DeleteEdge(int u, int v, Color color)
+        {
+            adjacencyList[u].Remove((v, color));
+            adjacencyList[v].Remove((u, color));
+            drawnVerticesCount--;
         }
         public void DrawGraph(Graphics graphics)
         {
