@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RamseyONLINE
@@ -21,12 +15,12 @@ namespace RamseyONLINE
             InitializeComponent();
             if (user_win)
             {
-                label_result.Text = "GRATULACJE!";
+                label_result.Text = "Congratulations! :)";
                 label_result.ForeColor = Color.Green;
             }
             else
             {
-                label_result.Text = "PRZEGRANA :(";
+                label_result.Text = "Sorry :(";
                 label_result.ForeColor = Color.Red;
             }
 
